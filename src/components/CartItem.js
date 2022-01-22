@@ -50,7 +50,7 @@ const CartItem = () => {
 
   //
   const TotalPrice = () => {
-      const reducer = (counter, currentValue) => counter + (currentValue.price * currentValue.quantity + 7)
+      const reducer = (counter, currentValue) => counter + (currentValue.price * currentValue.quantity)
       const add = cart.reduce(reducer,0)
       return add
   }
@@ -123,9 +123,6 @@ const CartItem = () => {
                   
                   <ContainerCuentas>
                     <Precios>Precio del producto: <strong>{prod.price}</strong>.00 $</Precios>
-                  <CostoDelivery>
-                      Nuestro envio a domicilio tiene un costo de : <strong>7.00 $</strong>
-                  </CostoDelivery>
                   
                   <Precios>Precio por cantidad: {prod.price} x {prod.quantity} = <strong>{prod.price * prod.quantity }</strong>.00 $</Precios>
                   </ContainerCuentas>
