@@ -106,7 +106,7 @@ const CartItem = () => {
           <p>Tu pedido llegará en 20 minutos</p>
           <p id="unstyled-modal-description">Haz click en el logo de nuestra tienda y recibe un regalo por tu compra:</p>
           <Link to="/gift">
-            <Logo src="https://res.cloudinary.com/silviajcn/image/upload/v1642618071/ONLINE%20SHOP%20%28prueba%20tecnica%203%29/OnlineShop_xau223.svg" alt="logo" />
+            <Logo src="https://res.cloudinary.com/silviajcn/image/upload/v1642618071/ONLINE%20SHOP%20%28prueba%20tecnica%203%29/OnlineShop_xau223.svg" alt="logo" onClick={() => dispatch(clearCartSync())}/>
           </Link>
           
         </Box>

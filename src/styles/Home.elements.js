@@ -19,6 +19,7 @@ export const ContainerDoble = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: start;
+  margin-bottom: 100px;
 `
 
 
