@@ -1,4 +1,4 @@
-import { types } from "../types/types";
+import { typesProducts } from "../types/types";
 
 const initialState = {
     products: []
@@ -6,26 +6,17 @@ const initialState = {
 
 export const productsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case types.register:
-            return {
-                products: [action.payload]
-            }
-        
-        case types.list:
+
+        case typesProducts.list:
             return {
                 products: [...action.payload]
             }
-        case types.detail:
+        case typesProducts.detail:
             return {
                 products: action.payload
             }
         
-        case types.delete:
-            return {
-                ...state
-            }
-        
-        case types.search:
+        case typesProducts.search:
             return {
                 products: action.payload
             }

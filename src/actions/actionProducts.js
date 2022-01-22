@@ -1,21 +1,69 @@
-import { types } from '../types/types';
-import { addDoc, collection, getDocs, query, where, doc, deleteDoc } from "@firebase/firestore";
+import { typesProducts } from '../types/types';
+import { collection, getDocs, query, where } from "@firebase/firestore";
 import { db } from '../firebase/firebaseConfig';
 
 
 
 
+//CATEGORIES PRODUCTS ---------------------------------------------
 
+//Action CATEGORY Product Async
+export const categoryProductAsync = (category) => {
 
+    return async (dispatch) => {
+        const prodCollections = collection(db, "ingredients");
+        const q = query(prodCollections, where("menu", "==", category))
+        const datos = await getDocs(q);
+        //console.log(datos);
 
-//ACTION DELETE PRODUCT-----------------------------------------------------------------------------
+        const producto = [];
+        datos.forEach((doc) => {
+            producto.push(doc.data())
+        })
+        //console.log(producto);
+        dispatch(categoryProductSync(producto))
+    }
+}
 
-//Action DELETE Product Async
-//Action DELETE Product Sync
-export const deleteProductSync = (code) => {
+//Action Category Product Sync
+export const categoryProductSync = (category) => {
     return {
-        type: types.delete,
-        payload: code
+        type: typesProducts.category,
+        payload: category
+    }
+}
+
+
+
+
+//LIST CATEGORIES ---------------------------------------------
+
+//Action List CATEGORIES Async
+ export const listCategoriesAsync = () => {
+     return async (dispatch) => {
+
+         const querySnapshot = await getDocs(collection(db, "menus"));
+         //console.log(querySnapshot);
+
+         const menu = [];
+         querySnapshot.forEach((doc) => {
+            //console.log(doc);
+            //console.log(doc.data());
+             menu.push({
+                 ...doc.data()
+             })
+         });
+         //console.log(productos);
+         dispatch(listCategoriesSync(menu));
+     }
+ }
+
+
+//Action List Product Sync
+export const listCategoriesSync = (menus) => {
+    return {
+        type: typesProducts.menus,
+        payload: menus
     }
 }
 
@@ -24,15 +72,16 @@ export const deleteProductSync = (code) => {
 
 
 
-//ACTION SEARCH PRODUCT-----------------------------------------------------------------------------
+//SEARCH PRODUCT ---------------------------------------------
 
-//Action SEARCH Product Async
+//Action Search Product Async
 export const searchProductAsync = (product) => {
 
     return async (dispatch) => {
-        const prodCollections = collection(db, "ropamujer");
-        const q = query(prodCollections, where("nameropa", "==", product))
+        const prodCollections = collection(db, "ingredients");
+        const q = query(prodCollections, where("menu", "==", product))
         const datos = await getDocs(q);
+        //console.log(datos);
 
         const producto = [];
         datos.forEach((doc) => {
@@ -43,25 +92,39 @@ export const searchProductAsync = (product) => {
     }
 }
 
-//Action SEARCH Product Sync
+//Action Search Product Sync
 export const searchProductSync = (product) => {
     return {
-        type: types.search,
+        type: typesProducts.search,
         payload: product
     }
 }
 
 
+//SHOW DETAILS PRODUCT ---------------------------------------------
 
+//Action Show Detail Product Async
+export const showDetailProductAsync = (id) => {
 
+    return async (dispatch) => {
+        const prodCollections = collection(db, "ingredients");
+        const q = query(prodCollections, where("id", "==", id))
+        const datos = await getDocs(q);
+        //console.log(datos);
 
-//ACTION DETAIL PRODUCT-----------------------------------------------------------------------------
+        const producto = [];
+        datos.forEach((doc) => {
+            producto.push(doc.data())
+        })
+        console.log(producto);
+        dispatch(showDetailProductSync(producto))
+    }
+}
 
-//Action DETAIL Product Async
-//Action DETAIL Product Sync
+//Action Show Detail Product Sync
 export const showDetailProductSync = (product) => {
     return {
-        type: types.detail,
+        type: typesProducts.detail,
         payload: product
     }
 }
@@ -70,59 +133,34 @@ export const showDetailProductSync = (product) => {
 
 
 
-//ACTION LIST PRODUCT-----------------------------------------------------------------------------
 
-//Action LIST Product Async
-export const listProductAsync = () => {
-    return async (dispatch) => {
+//LIST PRODUCT ---------------------------------------------
 
-        const querySnapshot = await getDocs(collection(db, "ropamujer"));
-        //console.log(querySnapshot);
+//Action List Product Async
+ export const listProductsAsync = () => {
+     return async (dispatch) => {
 
-        const productos = [];
-        querySnapshot.forEach((doc) => {
+         const querySnapshot = await getDocs(collection(db, "ingredients"));
+         //console.log(querySnapshot);
 
-            productos.push({
-                ...doc.data()
-            })
-        });
-        console.log(productos);
-        dispatch(listProductSync(productos));
-    }
-}
+         const productos = [];
+         querySnapshot.forEach((doc) => {
+            //console.log(doc);
+            //console.log(doc.data());
+             productos.push({
+                 ...doc.data()
+             })
+         });
+         //console.log(productos);
+         dispatch(listProductsSync(productos));
+     }
+ }
 
-//Action LIST Product Sync
-export const listProductSync = (products) => {
+
+//Action List Product Sync
+export const listProductsSync = (products) => {
     return {
-        type: types.list,
+        type: typesProducts.list,
         payload: products
-    }
-}
-
-
-
-
-
-//ACTION CREATE PRODUCT-----------------------------------------------------------------------------
-
-//Action CREATE Product Async
-export const registerProductAsync = (newProduct) => {
-    return (dispatch) => {
-        addDoc(collection(db, "ropamujer"), newProduct)
-        .then(resp => {
-            dispatch(registerProductSync(newProduct))
-            dispatch(listProductAsync())
-        })
-        .catch(error => {
-            console.log(error);
-        })
-    }
-}
-
-//Action CREATE Product Sync
-export const registerProductSync = (product) => {
-    return {
-        type: types.register,
-        payload: product
     }
 }

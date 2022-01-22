@@ -32,9 +32,16 @@ export const ImgLogo = styled.img`
 `
 
 export const TextNegrita = styled.p`
-  font-weight: 900;
-  font-size: 22px;
+  margin: 0px;
+  font-size: 14px;
   color: #000000;
+  border: 1px solid #BAFFB4;
+  border-radius: 2px;
+  padding: 3px;
+  &:hover {
+    border: 1px solid #000000;
+    cursor: pointer;
+  }
 `
 
 
@@ -66,24 +73,6 @@ export const InputSearch = styled(FormControl)`
   }
 `
 
-//btn
-export const BtnSearch = styled(Button)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: pink;
-  border: none;
-  border-radius: 0px 3px 3px 0px;
-  width: 48px;
-  height: 40px;
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media screen and (max-width: 900px) {
-    margin-right: 0px;
-  }
-`
 
 // Acount -----------------------------------------------------------------------------------------------
 export const ContainerAcount = styled.div`
@@ -91,17 +80,54 @@ export const ContainerAcount = styled.div`
   flex-direction: column;
   color: #000000;
   margin-right: 30px;
-  border: 1px solid #131921;
+  border: 1px solid #BAFFB4;
   border-radius: 2px;
   padding: 3px;
-  margin-left: 880px;
+  margin-left: 10px;
   &:hover {
-    border: 1px solid #fff;
+    border: 1px solid #000000;
     cursor: pointer;
   }
 `
 
-export const TextPequenio = styled.span`
+export const TextPequenio = styled.p`
   margin: 0px;
-  font-size: 12px;
+  font-size: 14px;
+`
+
+
+
+
+//Cart-------------------------------
+export const ContainerCar = styled.div`
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #BAFFB4;
+  border-radius: 2px;
+  padding: 3px;
+  margin-left: 700px;
+  &:hover {
+    border: 1px solid #000000;
+    cursor: pointer;
+  }
+`
+
+export const BtnCar = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  background: none;
+  svg {
+      fill: #000000;
+      font-size: 30px;
+    }
+`
+
+export const LinksMenu = styled.p`
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 30px;
 `

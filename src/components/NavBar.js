@@ -1,24 +1,48 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import UserData from '../hooks/dataUser';
 import { Link } from "react-router-dom";
 import { logout } from '../actions/actionLogin';
-import { ContainerPrincipal, ImgLogo, LogoContainer, TextNegrita, ContainerAcount, TextPequenio } from '../styles/NavBar.elements';
-//import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { ContainerPrincipal, ImgLogo, LogoContainer, TextNegrita, ContainerAcount, TextPequenio, ContainerCar, BtnCar, LinksMenu } from '../styles/NavBar.elements';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import '../index.css';
 
 const NavBar = () => {
 
-    const useUser = UserData();
+    //USER
+    const { name } = useSelector(state => state.login)
 
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    React.useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (name) => {
+            if (name?.uid) {
+                setIsLoggedIn(true);
+            } else {
+                setIsLoggedIn(false);
+            }
+        });
+    }, [setIsLoggedIn]);
+
+
+    //LOGOUT
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
-
     const handleLogout = () => {
         dispatch(logout())
         navigate("/login")
+    }
+
+
+    //PRODUCTS IN CART
+    const { cart } = useSelector((store) => store.shopping);
+
+    const totalItems = () => {
+        const reducer = (counter, currentValue) => counter + currentValue.quantity
+        const add = cart.reduce(reducer, 0)
+        
+        return add
     }
 
     return (
@@ -30,25 +54,47 @@ const NavBar = () => {
                 </Link>
             </LogoContainer>
 
-            <TextNegrita><strong>Online Shop</strong></TextNegrita>
+            <Link to="/productday" className="links-two">
+                <TextNegrita>
+                    <strong>Ver plato del día</strong>
+                </TextNegrita>
+            </Link>
 
             <Link to="/login" className="links">
                 <ContainerAcount>
-                    <TextPequenio>
-                        Hola, {
-                              useUser.name!==undefined?useUser.name:" identifícate"
-                              }
-                    </TextPequenio>
+                    { isLoggedIn ? (
+                        <TextPequenio onClick={() => handleLogout()}>
+                            Hola, {name}
+                        </TextPequenio>
+                    ) : (
+                        <TextPequenio>
+                            Hola, Identifícate
+                        </TextPequenio> 
+                    )}
                 </ContainerAcount>
             </Link>
 
-            <Link to="/login" className="links">
-                <TextNegrita onClick={() => handleLogout()}>
-                        {
-                            useUser.name!==undefined?"Logout":" "
-                        }
-                </TextNegrita>
+            <Link to="/login" className="links-two">
+                <ContainerAcount>
+                    { isLoggedIn ? (
+                        <TextPequenio onClick={() => handleLogout()}>
+                            Logout
+                        </TextPequenio>
+                    ) : (
+                        <TextPequenio>
+                            
+                        </TextPequenio> 
+                    )}
+                    
+                </ContainerAcount>
             </Link>
+
+            <ContainerCar>
+                <BtnCar>
+                    <ShoppingCartOutlinedIcon />
+                    <LinksMenu>{totalItems()}</LinksMenu>
+                </BtnCar>
+            </ContainerCar>
             
         </ContainerPrincipal>
     )

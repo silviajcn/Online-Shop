@@ -9,6 +9,7 @@ import { DashboardRoutes } from './DashboardRoutes';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 import IconSpinner from '../components/IconSpinner';
+import Home from '../pages/Home';
 
 const AppRouter = () => {
 
@@ -45,12 +46,14 @@ const AppRouter = () => {
             <NavBar />
 
             <Routes>
+
+                <Route path='/' element={<Home />} />
+
                 <Route path="/*" element={
                     <PrivateRoute isAuthenticated={isLoggedIn}>
                         <DashboardRoutes />
                     </PrivateRoute>
                 } />
-
 
                 <Route path="/login" element={
                     <PublicRoute isAuthenticated={isLoggedIn}>

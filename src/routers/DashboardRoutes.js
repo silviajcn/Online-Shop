@@ -2,17 +2,17 @@ import {
     Routes, Route,
     Navigate
 } from 'react-router-dom';
-import Home from '../pages/Home';
+import DayProduct from '../pages/DayProduct';
+import MenuDay from '../components/MenuDay';
+import GiftRecipe from '../pages/GiftRecipe';
 
 export const DashboardRoutes = () => {
     return (
         <>
         <div>
             <Routes>
-                <Route path='/' element={<Home />} />
-                {/* <Route path='/registerp' element={<RegisterProduct />} /> */}
-                {/* <Route path='/products' element={<Listar />} /> */}
-                {/* <Route path='/searching' element={<Searching />} /> */}
+                <Route path='/productday' element={<DayProduct />} />
+                <Route path='/gift' element={<GiftRecipe />} />
 
                 <Route path='*' element={<Navigate to="/" />} />
             </Routes>
