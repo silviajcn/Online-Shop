@@ -8,6 +8,8 @@ Online Shop es una página de ventas electrónicas de un mercado, en esta oportu
 Para la compra en la tienda el usuario debe iniciar sesión en la página, para ello, tiene la opción de hacerlo con Google, Facebook o puede registrarse con correo y contraseña.
 
 # Puede visitar la tienda aquí: https://prueba-tecnica-3.web.app/ 
+
+![onlineshop2](https://user-images.githubusercontent.com/88461234/150691918-61ce0d8c-e5e6-45d5-8c60-27df6e0391eb.png)
     
 # 💎 Online Shop Proyecto
 
@@ -54,6 +56,3 @@ Para la creación del proyecto se utilizaron las siguientes herramientas de desa
 ## 🌟 Autor
 
 * **Silvia C. Navarro**  - [@silviajcn](https://github.com/silviajcn)
-
-
-![onlineshop2](https://user-images.githubusercontent.com/88461234/150691760-324f6590-2aac-4e39-b44b-a7b80a3fd15e.png)
