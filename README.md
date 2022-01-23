@@ -1,4 +1,4 @@
-## Online Shop  🙌
+# Online Shop  🙌
 
 ![onlineshop](https://user-images.githubusercontent.com/88461234/150691359-4f0a502d-3fa4-4fce-b149-e0d9fbfc2d2c.png)
 
@@ -7,7 +7,7 @@ Online Shop es una página de ventas electrónicas de un mercado, en esta oportu
 
 Para la compra en la tienda el usuario debe iniciar sesión en la página, para ello, tiene la opción de hacerlo con Google, Facebook o puede registrarse con correo y contraseña.
 
-# Puede visitar la tienda aquí: https://prueba-tecnica-3.web.app/ 
+## Puede visitar la tienda aquí: https://prueba-tecnica-3.web.app/ 
 
 ![onlineshop2](https://user-images.githubusercontent.com/88461234/150691918-61ce0d8c-e5e6-45d5-8c60-27df6e0391eb.png)
     
