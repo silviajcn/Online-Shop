@@ -17,6 +17,7 @@ Para la creación del proyecto se utilizaron las siguientes herramientas de desa
 
 * react
 * react-router-dom
+* redux
 * react-redux
 * redux-thunk
 * firebase
