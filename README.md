@@ -15,20 +15,20 @@ Para la compra en la tienda el usuario debe iniciar sesión en la página, para 
 
 Para la creación del proyecto se utilizaron las siguientes herramientas de desarrollo:
 
-* react
-* react-router-dom
-* redux
-* react-redux
-* redux-thunk
-* firebase
-* formik
-* yup
-* styled-components
-* @mui/material
-* @mui/icons-material
-* bootstrap
-* react-bootstrap
-* react-icons
+* ```react```
+* ```react-router-dom```
+* ```redux```
+* ```react-redux```
+* ```redux-thunk```
+* ```firebase```
+* ```formik```
+* ```yup```
+* ```styled-components```
+* ```@mui/material```
+* ```@mui/icons-material```
+* ```bootstrap```
+* ```react-bootstrap```
+* ```react-icons```
 
 ## 🔥 Descarga del proyecto e Instalación
 
