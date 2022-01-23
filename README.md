@@ -39,7 +39,7 @@ Para la creación del proyecto se utilizaron las siguientes herramientas de desa
 * Para levantar el servidor local se debe corrar el comando ```npm start```
 * Se debe tener en cuenta que para la utilización de Firebase, se deben cambiar los datos de la constante firebaseConfig con datos de una cuenta personal de Firebase. Este documento se encuentra en la siguiente direccion: src > firebase > firebaseConfig.js > firebaseConfig (leer nota 1)
 
-Nota 1 *: para cambiar estos datos es necesario contar con una cuenta en Firebase, crear un nuevo proyecto en modo, y en la opcion de Configuracion del proyecto, encontrara la opcion de aplicaciones web, al selecionar esta ocpion optendra la configuracion del SDK del proyecto, en el SDK encontrara su confirguracion personal de la constante firebaseConfig.
+Nota 1 : para cambiar estos datos es necesario contar con una cuenta en Firebase, crear un nuevo proyecto, y en la opcion de Configuracion del proyecto, encontrara la opcion de aplicaciones web, al selecionar esta ocpion optendra la configuracion del SDK del proyecto, en el SDK encontrara su confirguracion personal de la constante firebaseConfig.
 
 ## 🔍 Vistas 
 
