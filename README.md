@@ -59,3 +59,4 @@ Nota 1 : para cambiar estos datos es necesario contar con una cuenta en Firebase
 ## 🌟 Autor
 
 * **Silvia C. Navarro**  - [@silviajcn](https://github.com/silviajcn)
+* **Mi portafolio** - [Mi portafolio](https://silviajcn.vercel.app/)
