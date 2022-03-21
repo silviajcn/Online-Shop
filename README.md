@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Online Shop  🙌
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![onlineshop](https://user-images.githubusercontent.com/88461234/150691359-4f0a502d-3fa4-4fce-b149-e0d9fbfc2d2c.png)
 
-## Available Scripts
+## 📌 ¿Qué es Online Shop? 
+Online Shop es una página de ventas electrónicas de un mercado, en esta oportunidad se están vendiendo menús temáticos, esto permite que el usuario seleccione uno de los menús temáticos del día, al hacerlo, obtendrá una lista completa de los ingredientes que necesita para la preparación de dicho menú. El usuario elegirá los ingredientes que quiera, así como la cantidad de su preferencia, en todo momento tendrá una lista actualizada de su carrito de compras y el precio total que debe pagar. 
 
-In the project directory, you can run:
+Para la compra en la tienda el usuario debe iniciar sesión en la página, para ello, tiene la opción de hacerlo con Google, Facebook o puede registrarse con correo y contraseña.
 
-### `npm start`
+## Puede visitar la tienda aquí: https://prueba-tecnica-3.web.app/ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![onlineshop2](https://user-images.githubusercontent.com/88461234/150691918-61ce0d8c-e5e6-45d5-8c60-27df6e0391eb.png)
+    
+# 💎 Online Shop Proyecto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para la creación del proyecto se utilizaron las siguientes herramientas de desarrollo:
 
-### `npm test`
+* ```react```
+* ```react-router-dom```
+* ```redux```
+* ```react-redux```
+* ```redux-thunk```
+* ```firebase```
+* ```formik```
+* ```yup```
+* ```styled-components```
+* ```@mui/material```
+* ```@mui/icons-material```
+* ```bootstrap```
+* ```react-bootstrap```
+* ```react-icons```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔥 Descarga del proyecto e Instalación
 
-### `npm run build`
+* Clonar el repositorio
+* Abrir el proyecto en Visual Studio Code (o editor de confianza)
+* Abrir la terminal del editor
+* Correr el comando ```npm install``` para instalar correctamente las dependencias del proyecto
+* Para levantar el servidor local se debe corrar el comando ```npm start```
+* Se debe tener en cuenta que para la utilización de Firebase, se deben cambiar los datos de la constante firebaseConfig con datos de una cuenta personal de Firebase. Este documento se encuentra en la siguiente direccion: src > firebase > firebaseConfig.js > firebaseConfig (leer nota 1)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Nota 1 : para cambiar estos datos es necesario contar con una cuenta en Firebase, crear un nuevo proyecto, y en la opcion de Configuracion del proyecto, encontrara la opcion de aplicaciones web, al selecionar esta ocpion optendra la configuracion del SDK del proyecto, en el SDK encontrara su confirguracion personal de la constante firebaseConfig.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔍 Vistas 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Home
 
-### `npm run eject`
+![home](https://user-images.githubusercontent.com/88461234/150691626-4711aa11-c126-4d1b-8b80-55a2e22c9393.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Menu seleccionado
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![menus1](https://user-images.githubusercontent.com/88461234/150691646-4f6f7e1b-a5a5-4fd4-9266-6a14250c8a69.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Carrito
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![menu2](https://user-images.githubusercontent.com/88461234/150691653-c4bc6594-1123-4212-a0d5-d2d71c7fce12.png)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌟 Autor
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Silvia C. Navarro**  - [@silviajcn](https://github.com/silviajcn)
+* **Mi portafolio** - [Mi portafolio](https://silviajcn.vercel.app/)
