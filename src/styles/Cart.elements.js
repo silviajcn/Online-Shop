@@ -45,9 +45,9 @@ export const BtnClear = styled.button`
 
 export const CostoDelivery = styled.p`
   color: #000000;
-  font-size: 12px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  font-size: 14px;
+  margin-top: 0px;
+  margin-bottom: 30px;
 `
 
 export const Precios = styled.p`

@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { listProductsAsync } from '../actions/actionProducts';
 import { ContainerPrincipal, ContainerIngredients, ImgProduct, DataProduct, NameProduct, BrandProduct, PriceProduct, Price, AddProduct, BtnAddCart, IconCart } from '../styles/Products.elements';
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { addCartSync } from '../actions/actionShopping';
 import { categoryProductAsync } from '../actions/actionProducts';
@@ -11,24 +10,26 @@ const MenuDay = () => {
 
     const dispatch = useDispatch();
 
-    let history = useNavigate();
+    //let history = useNavigate();
 
     const { products } = useSelector((store) => store.products);
     //console.log(products)
 
     useEffect(() => {
-        dispatch(categoryProductAsync());
-    }, []);
+      dispatch(categoryProductAsync());
+      // dispatch(listProductsAsync());
+    }, [dispatch]);
     
     return (
-        <ContainerPrincipal>
+      <ContainerPrincipal>
+            <h2>Ingredientes para el plato del dia:</h2>
 
-             <h2>Ingredientes para el plato del dia:</h2>
-
-            <>
+        <>
         {
-          products.map((e, i) => (
+            products.map((e, i) => (
+                
             <ContainerIngredients key={i}>
+                
               <div>
                 <ImgProduct src={e.image} alt="..." />
               </div>
@@ -57,6 +58,7 @@ const MenuDay = () => {
               </AddProduct>
             </ContainerIngredients>
           ))
+          
         }
       
       </>

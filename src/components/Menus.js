@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { ContainerPrincipal, Title, Containers, TitleProduct, ImgProduct, LinksBlue, ImgBandera } from '../styles/Menus.elements';
 import { searchProductAsync, listCategoriesAsync } from '../actions/actionProducts';
@@ -8,14 +8,14 @@ const Menus = () => {
 
     const dispatch = useDispatch();
 
-    let history = useNavigate();
+    //let history = useNavigate();
 
     const { menus } = useSelector((store) => store.menus);
     //console.log(menus)
 
     useEffect(() => {
         dispatch(listCategoriesAsync());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div>

@@ -54,11 +54,11 @@ const NavBar = () => {
                 </Link>
             </LogoContainer>
 
-            <Link to="/productday" className="links-two">
+            {/* <Link to="/productday" className="links-two">
                 <TextNegrita>
                     <strong>Ver plato del día</strong>
                 </TextNegrita>
-            </Link>
+            </Link> */}
 
             <Link to="/login" className="links">
                 <ContainerAcount>
@@ -74,6 +74,15 @@ const NavBar = () => {
                 </ContainerAcount>
             </Link>
 
+            
+
+            <ContainerCar>
+                <BtnCar>
+                    <ShoppingCartOutlinedIcon />
+                    <LinksMenu>{totalItems()}</LinksMenu>
+                </BtnCar>
+            </ContainerCar>
+
             <Link to="/login" className="links-two">
                 <ContainerAcount>
                     { isLoggedIn ? (
@@ -88,13 +97,6 @@ const NavBar = () => {
                     
                 </ContainerAcount>
             </Link>
-
-            <ContainerCar>
-                <BtnCar>
-                    <ShoppingCartOutlinedIcon />
-                    <LinksMenu>{totalItems()}</LinksMenu>
-                </BtnCar>
-            </ContainerCar>
             
         </ContainerPrincipal>
     )

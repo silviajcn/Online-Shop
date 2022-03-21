@@ -2,7 +2,7 @@ import React from 'react';
 import { deleteCartSync, clearCartSync } from '../actions/actionShopping';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { Container, ContainerItems, Titleproduct, NullProducts, ContainerBtns, BtnClear, BtnDeleteOne, BtnDeleteAll, BtnAddPurchase, ContainerBtnCompra, ContainerTotal, CostoDelivery, ContainerCuentas, Precios, PriceTotal, Logo, NameProduct } from '../styles/Cart.elements';
+import { Container, ContainerItems, Titleproduct, NullProducts, ContainerBtns, BtnClear, BtnDeleteOne, BtnDeleteAll, BtnAddPurchase, ContainerBtnCompra, ContainerTotal, CostoDelivery, ContainerCuentas, Precios, PriceTotal, Logo } from '../styles/Cart.elements';
 
 //MUI
 import { styled, Box } from '@mui/system';
@@ -61,6 +61,11 @@ const CartItem = () => {
     return add
   }
 
+  const total = () => {
+    let sum = TotalPrice();
+    return Number(sum) + 7;
+  };
+
     //MUI
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -71,11 +76,18 @@ const CartItem = () => {
       
     <Container>
 
-        <PriceTotal>
-            Total a pagar: <strong>{TotalPrice()}.00</strong> $
-        </PriceTotal>
-
+        {cart.length === 0 ?
+          <PriceTotal>
+            Total a pagar: <strong>0.00</strong> $
+          </PriceTotal>
+          :
+          <PriceTotal>
+            Total a pagar: <strong>{total()}.00</strong> $
+          </PriceTotal>
+        }
+          
         <p>Cantidad de items: {sumTotal()}</p>
+        <CostoDelivery>Gasto de envio: <strong>7.00 $</strong></CostoDelivery>
 
         
 
@@ -86,7 +98,7 @@ const CartItem = () => {
             <BtnAddPurchase onClick={handleOpen}>
           <strong>Comprar ingredientes:</strong>
           <ContainerTotal>
-            <strong>{TotalPrice()}.00</strong> $
+            <strong>{total()}.00</strong> $
           </ContainerTotal>
             </BtnAddPurchase>
 

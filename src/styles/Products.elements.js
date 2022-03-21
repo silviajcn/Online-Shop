@@ -11,6 +11,7 @@ export const ContainerPrincipal = styled.div`
   width: 100%;
   height: 600px;
   padding: 0px;
+  margin-bottom: 150px;
 `
 
 export const ContainerIngredients = styled.div`
@@ -21,7 +22,7 @@ export const ContainerIngredients = styled.div`
   background: #BAFFB4;
   color: #000000;
   border-bottom: 1px solid gray;
-  height: 600px;
+  height: 100px;
 `
 
 export const ImgProduct = styled.img`
@@ -31,7 +32,7 @@ export const ImgProduct = styled.img`
 `
 
 export const DataProduct = styled.div`
-  margin: 0px 40px 0px 50px;
+  margin: 5px 40px 5px 50px;
   padding: 0px;
   width: 230px;
 `

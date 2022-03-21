@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Form, FormControl} from "react-bootstrap";
+import { Form, FormControl} from "react-bootstrap";
 
 export const ContainerPrincipal = styled.div`
   width: 100%;
@@ -105,7 +105,7 @@ export const ContainerCar = styled.div`
   border: 1px solid #BAFFB4;
   border-radius: 2px;
   padding: 3px;
-  margin-left: 700px;
+  margin-left: 980px;
   &:hover {
     border: 1px solid #000000;
     cursor: pointer;
